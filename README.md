@@ -1,7 +1,7 @@
-<p align="center">All-Black</p>
+<h1 align="center"><strong>All Black</strong></h1>
 
-<p align="center">Problema</p>
-<p align="center">
+<p align="center"><strong>Problema</strong></p>
+<p align="justify">
 Os All Blacks possuem uma base de torcedores em planilha Excel.
 - A planilha é atualizada mensalmente com base em um arquivo XML enviado pela
 loja virtual da seleção na internet. Uma funcionária do Administrativo abre o arquivo
@@ -21,9 +21,9 @@ como é feito.
 </p>
 
 ## Solução
-
+<p align="justify">
 Sistema com login onde poderá importar o XML para a base de dados, também foi criado um CRUD para os registros de torcedores. É possivel importar a base de dados para Excel,
-código de facil manuntenção para futuras implementações como por exemplo gerar outro tipo de exportação ou importação.
+código de facil manuntenção para futuras implementações como por exemplo gerar outro tipo de exportação ou importação.</p>
 
 ## Tecnologias usadas
 - Laravel Framework. 
@@ -34,5 +34,6 @@ código de facil manuntenção para futuras implementações como por exemplo ge
 
 ## Como instalar
 
+<p align="justify">
 A configuração é feita como a de qualquer projeto Laravel, primeiro ajuste o seu ".env" para conter os dados do seu banco corretamente, depois rode os comando "composer install",
-"php artisan migrate --seed" e também npm install, Tudo feito! aproveite ;)
+"php artisan migrate --seed" e também npm install, Tudo feito! aproveite ;)</p>
