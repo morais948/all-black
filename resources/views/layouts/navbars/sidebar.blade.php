@@ -84,6 +84,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('fans.index') }}">
+                        <i class="ni ni-favourite-28 text-danger"></i> {{ __('Torcedores') }}
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Laravel Examples') }}</span>

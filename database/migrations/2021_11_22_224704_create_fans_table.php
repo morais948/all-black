@@ -15,6 +15,16 @@ class CreateFansTable extends Migration
     {
         Schema::create('fans', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('document');
+            $table->string('cep');
+            $table->string('address');
+            $table->string('district');
+            $table->string('city');
+            $table->string('uf');
+            $table->string('telephone');
+            $table->string('email');
+            $table->integer('active');
             $table->timestamps();
         });
     }

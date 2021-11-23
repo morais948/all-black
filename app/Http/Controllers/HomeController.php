@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        parent::__construct();
     }
 
     /**
@@ -21,6 +22,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return view('dashboard', ['counterFans' => $this->settings]);
     }
 }

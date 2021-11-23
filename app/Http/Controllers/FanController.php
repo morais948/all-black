@@ -12,9 +12,29 @@ class FanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if(!empty($request->filter)){
+            $torcedores = Fan::where('email', 'like', "%$request->filter%")->paginate(15);
+            foreach ($torcedores as $key => $value) {
+                if($value->active == 1){
+                    $value->active = "ativo";
+                }else{
+                    $value->active = "inativo";
+                }
+            }
+            return view('pages.fans.index', compact('torcedores'));
+        }
+
+        $torcedores = Fan::paginate(15);
+        foreach ($torcedores as $key => $value) {
+            if($value->active == 1){
+                $value->active = "ativo";
+            }else{
+                $value->active = "inativo";
+            }
+        }
+        return view('pages.fans.index', ['counterFans' => $this->settings, 'torcedores' => $torcedores]);
     }
 
     /**
@@ -57,7 +77,7 @@ class FanController extends Controller
      */
     public function edit(Fan $fan)
     {
-        //
+        return view('pages.fans.edit', ['counterFans' => $this->settings, 'fan' => $fan]);
     }
 
     /**
@@ -69,7 +89,16 @@ class FanController extends Controller
      */
     public function update(Request $request, Fan $fan)
     {
-        //
+        $date = $request->except('_token', '_method');
+        isset($date['active']) ? $date['active'] = 1 : $date['active'] = 0;
+
+        try {
+            $fan->update($date);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+        return redirect()->route('fans.index')->with('success', 'Item Editado');
     }
 
     /**
@@ -80,6 +109,11 @@ class FanController extends Controller
      */
     public function destroy(Fan $fan)
     {
-        //
+        try {
+            $fan->delete();
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        return redirect()->back()->with('success', 'Item excluído');
     }
 }

@@ -6,14 +6,22 @@ use Illuminate\View\Component;
 
 class Tabela extends Component
 {
+    public $items;
+    public $fields;
+    public $contentFildes;
+    public $prefixResource;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($items, $fields, $contentFildes, $prefixResource)
     {
-        //
+        $this->items = $items;
+        $this->fields = $fields;
+        $this->contentFildes = $contentFildes;
+        $this->prefixResource = $prefixResource;
     }
 
     /**

@@ -20,7 +20,8 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('vue-teste', require('./components/dashboard/Teste.vue').default);
+Vue.component('vue-form-delete-all', require('./components/dashboard/FormDeleteAll.vue').default);
+Vue.component('vue-form-delete-item', require('./components/dashboard/FormDeleteItem.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
