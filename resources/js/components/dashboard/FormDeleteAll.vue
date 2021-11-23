@@ -1,7 +1,7 @@
 <template>
     <form :action="rota" method="POST" class="d-flex justify-content-center mr-2" @submit.prevent="submit($event)">
         <input type="hidden" :value="csrf" name="_token">
-        <button type="submit" class="btn btn-danger">Limpar Base de Dados</button>
+        <button type="submit" class="dropdown-item"><i class="fas fa-eraser"></i> Limpar Base de Dados</button>
     </form>
 </template>
 

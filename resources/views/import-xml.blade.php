@@ -22,7 +22,7 @@
                                 <div class="form-group">
                                     <input type="file" class="form-control-file" name="xml">
                                 </div>
-                                <button type="submit" class="btn btn-success">Importar</button>
+                                <button type="submit" class="btn btn-outline-default">Importar</button>
                             </form>
                         </div>
                     </div>

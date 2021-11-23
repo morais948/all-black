@@ -1,5 +1,5 @@
 <div class="table-responsive" style="min-height: 200px">
-    <table class="table align-items-center table-flush">
+    <table class="table align-items-center table-flush animate__animated animate__bounceInDown">
       <thead class="thead-light">
 
         <tr>
@@ -25,7 +25,7 @@
                             <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                            <a class="dropdown-item" href="{{ route("$prefixResource" . ".edit", $item->id) }}">Editar</a>                            
+                            <a class="dropdown-item" href="{{ route("$prefixResource" . ".edit", $item->id) }}"><i class="far fa-edit"></i> Editar</a>                            
                             <vue-form-delete-item csrf="{{ csrf_token() }}" rota="{{ route("$prefixResource" . ".destroy", $item->id) }}" >
                             </vue-form-delete-item>  
                         </div>

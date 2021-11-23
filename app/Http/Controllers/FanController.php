@@ -15,7 +15,7 @@ class FanController extends Controller
     public function index(Request $request)
     {
         if(!empty($request->filter)){
-            $torcedores = Fan::where('email', 'like', "%$request->filter%")->paginate(15);
+            $torcedores = Fan::where('email', 'like', "%$request->filter%")->paginate(10);
             foreach ($torcedores as $key => $value) {
                 if($value->active == 1){
                     $value->active = "ativo";
@@ -23,10 +23,10 @@ class FanController extends Controller
                     $value->active = "inativo";
                 }
             }
-            return view('pages.fans.index', compact('torcedores'));
+            return view('pages.fans.index', ['counterFans' => $this->settings, 'torcedores' => $torcedores]);
         }
 
-        $torcedores = Fan::paginate(15);
+        $torcedores = Fan::paginate(10);
         foreach ($torcedores as $key => $value) {
             if($value->active == 1){
                 $value->active = "ativo";

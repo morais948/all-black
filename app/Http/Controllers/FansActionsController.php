@@ -10,7 +10,7 @@ use App\Exports\FansExport;
 class FansActionsController extends Controller
 {
     public function viewImport(){
-        return view('import-xml');
+        return view('import-xml', ['counterFans' => $this->settings]);
     }
 
     public function importXml(Request $request){        

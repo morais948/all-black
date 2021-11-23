@@ -4,7 +4,7 @@
     @include('layouts.headers.cards')
     
     <div class="container-fluid mt--7">
-        <div class="row">
+        <div class="row animate__animated animate__bounceInDown">
             <div class="col-12 mb-5 mb-xl-0">
                 <div class="card">
                     <div class="card-body">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-success">
+                            <button type="submit" class="btn btn-outline-default">
                                 Atualizar
                             </button>
                         </form>

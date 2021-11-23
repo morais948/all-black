@@ -2,7 +2,7 @@
     <form :action="rota" method="POST" @submit.prevent="submit($event)">
         <input type="hidden" :value="csrf" name="_token">
         <input type="hidden" name="_method" value="delete">
-        <button class="dropdown-item" type="submit">Excluir</button>
+        <button class="dropdown-item" type="submit"><i class="far fa-trash-alt"></i> Excluir</button>
     </form>
 </template>
 
