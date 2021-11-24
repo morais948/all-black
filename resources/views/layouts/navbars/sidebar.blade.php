@@ -88,6 +88,11 @@
                         <i class="ni ni-favourite-28 text-danger"></i> {{ __('Torcedores') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('view.email') }}">
+                        <i class="ni ni-send text-success"></i> {{ __('E-mails') }}
+                    </a>
+                </li>
         </div>
     </div>
 </nav>
